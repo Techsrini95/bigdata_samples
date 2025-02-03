@@ -1,5 +1,4 @@
-package sample
-
+package datasample
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -7,9 +6,8 @@ import org.apache.spark.api.java.function.Function;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark._
 
-
 object session3 {
-  
+
   def main(args: Array[String]): Unit = {
 
     val conf = new SparkConf().setAppName("first").setMaster("local[*]").set("spark.driver.host", "localhost")
@@ -31,8 +29,7 @@ object session3 {
       "hello world",
       "Scala is a great programming language Spark makes big",
       "data processing easy Scala and Spark work together",
-      "Hello Spark world"
-    ))
+      "Hello Spark world"))
 
     // Perform a flatMap transformation to split each line into words
     val words = inputData.flatMap(line => line.split(" "))
@@ -47,5 +44,5 @@ object session3 {
 
     // Stop the Spark session
     spark.stop()
-}
+  }
 }

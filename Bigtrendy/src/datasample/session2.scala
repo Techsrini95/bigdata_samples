@@ -1,4 +1,4 @@
-package sample
+package datasample
 
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
@@ -34,7 +34,6 @@ object session2 {
     val df = data.toDF("id", "tdate", "amount", "category", "product", "spendby")
     df.printSchema()
     df.show()
-    
 
   }
 }

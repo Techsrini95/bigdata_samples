@@ -1,4 +1,4 @@
-package sample
+package datasample
 
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext

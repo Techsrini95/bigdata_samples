@@ -1,11 +1,12 @@
-package sample
+package datasample
 
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.catalyst.expressions.Ascending
 
-object Cust_order {
+object cust_order {
+
   def main(args: Array[String]): Unit = {
 
     // Set up SparkConf and SparkContext to initialize Spark application
