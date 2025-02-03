@@ -1,0 +1,51 @@
+# Ignore compiled binaries and output directories
+bin/
+target/
+out/
+
+# Ignore IntelliJ IDEA / Eclipse project files
+*.iml
+.idea/
+.metadata/
+.classpath
+.project
+.settings/
+.recommenders/
+
+# Ignore temporary system files
+*.log
+logs/
+RemoteSystemsTempFiles/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore package files
+*.jar
+*.zip
+*.tar.gz
+
+# Ignore Python and Jupyter Notebook cache files (if applicable)
+__pycache__/
+*.pyc
+*.pyo
+*.ipynb_checkpoints/
+
+# Ignore files related to TrendyTech project (if required)
+TrendyTech/.idea/
+TrendyTech/.metadata/
+TrendyTech/bin/
+TrendyTech/target/
+
+# Ignore files related to zeyobronproject (if required)
+zeyobronproject/.idea/
+zeyobronproject/.metadata/
+zeyobronproject/bin/
+zeyobronproject/target/
+
+# Ignore files related to Bigdata project (if required)
+Bigdata/.idea/
+Bigdata/.metadata/
+Bigdata/bin/
+Bigdata/target/
