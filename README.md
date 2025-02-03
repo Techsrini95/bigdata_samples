@@ -1,7 +1,7 @@
 # bigdata_samples
 here all folders contains bigdata working exmaples
 
-### Code Explanation:(Cust_order)
+### Code Explanation:(Cust_order - Bigdata_tech_from start/src/sample/Cust_order.scala)
 1. **Spark Configuration and Context:**
    - `SparkConf`: Configures Spark settings such as the application name, master URL, and other settings.
    - `SparkContext`: Initializes the Spark application using the configuration, which allows you to interact with Spark's distributed computation system.
