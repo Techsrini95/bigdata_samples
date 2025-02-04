@@ -5,12 +5,12 @@ import org.apache.spark.SparkContext
 import org.apache.spark.sql.{ SparkSession, Row }
 import org.apache.spark.sql.types._
 
-object moviedata {
+object sampledata {
 
   def main(args: Array[String]): Unit = {
-    
+
     println("===Hello====")
-    
+
     val conf = new SparkConf().setAppName("first").setMaster("local[*]").
       set("spark.driver.host", "localhost").set("spark.driver.allowMultipleContexts", "true")
 
@@ -20,16 +20,25 @@ object moviedata {
     val spark = SparkSession.builder().appName("RDD to DataFrame")
       .master("local").getOrCreate()
 
-    val rdd = sc.textFile("C://Users/laksh/OneDrive/Desktop/spark/TrendySourcedata/week9/movie_data.data")
+    val rdd = sc.textFile("C://Users/laksh/OneDrive/Desktop/spark/TrendySourcedata/week9/search_data.txt")
 
-    val rdd1 = rdd.map(x => x.split("\t")(2))
-    val finalre = rdd1.countByValue()
+    val flatmaprdd = rdd.flatMap(x => x.split(" "))
+    val maprdd = flatmaprdd.map(x => (x, 1))
 
-    //    val rdd2 = rdd1.map(x => (x, 1))
-    //
-    //    val finalre = rdd2.reduceByKey(_+_)
+    val reducuerdd = maprdd.reduceByKey(_ + _)
 
-    finalre.take(5).foreach(println)
+    val sortrdd = reducuerdd.sortBy(x => x._2, ascending = false)
+
+    sortrdd.take(10).foreach(println)
+//
+//    val maprdd1 = maprdd.map(x => x._2)
+//
+//    val reducuerdd1 = maprdd1.reduce((x, y) => (x + y).toInt)
+//
+//    println
+//    println
+//    println("total sum   " + reducuerdd1)
 
   }
+
 }
